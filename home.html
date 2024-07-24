@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="photo.css">
+    <title>DreamSnap Studios</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book_session.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="reviews.html">Customer Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            
+            <h1> DreamSnap Studios</h1>
+            <p> Capturing moments, one frame at a time.</p>
+            <a href="book_session.html" class="btn">Book a Session</a>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>For reservations and inquiries, please contact us:</p>
+        <address>
+            Email: <a href="mailto:info@DreamSnapStudios.com">info@DreamSnapStudios.com</a><br>
+            Phone: +1 (555) 123-4567
+        </address>
+
+        <h3>Send us a Message</h3>
+
+        <form action="contact-success.html" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br>
+            <br>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            var emailInput = document.getElementById("email");
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(emailInput.value)) {
+                alert("Please enter a valid email address.");
+                event.preventDefault(); 
+            }
+        });
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024 DreamSnap Studios. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

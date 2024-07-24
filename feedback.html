@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="photo.css">
+    <title>DreamSnap Studios - Feedback</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book_session.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="reviews.html">Customer Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="feedback" class="feedback">
+        <h2>Feedback Form</h2>
+
+        <p>We appreciate your feedback! Please let us know how we did.</p>
+
+        <form action="feedback-success.html" method="post" onsubmit="return validateForm()">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="5 - Excellent">5 - Excellent</option>
+                <option value="4 - Very Good">4 - Very Good</option>
+                <option value="3 - Good">3 - Good</option>
+                <option value="2 - Fair">2 - Fair</option>
+                <option value="1 - Poor">1 - Poor</option>
+            </select>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+            <br>
+            <br>
+
+            <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DreamSnap Studios. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to get registered emails from local storage
+        function getRegisteredEmails() {
+            var emails = localStorage.getItem('registeredEmails');
+            return emails ? JSON.parse(emails) : [];
+        }
+
+        // Function to set registered emails in local storage
+        function setRegisteredEmails(emails) {
+            localStorage.setItem('registeredEmails', JSON.stringify(emails));
+        }
+
+       
+function validateForm() {
+    var registeredEmails = getRegisteredEmails();
+
+    var nameInput = document.getElementById("name").value; 
+    var emailInput = document.getElementById("email").value;
+    var ratingInput = document.getElementById("rating").value;
+    var commentsInput = document.getElementById("comments").value;
+
+    // Check if the entered email is in the registered emails
+    var isEmailRegistered = registeredEmails.includes(emailInput);
+
+    if (!isEmailRegistered) {
+        alert("Email not registered!");
+        return false;
+    }
+
+    
+    var feedback = {
+        name: nameInput, 
+        email: emailInput,
+        rating: ratingInput,
+        comments: commentsInput
+    };
+
+    var feedbacks = localStorage.getItem('feedbacks');
+    feedbacks = feedbacks ? JSON.parse(feedbacks) : [];
+    feedbacks.push(feedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+    alert("Thank you for your feedback!");
+    return true;
+}
+
+
+        
+        var initialRegisteredEmails = ["lbezawad@gitam.in", "saibezawada77@gitam.in","ykasa@gitam.in","ycetty@gitam.in","ksunidhi@gmail.com","jas@gmail.com"];
+
+   
+        setRegisteredEmails(initialRegisteredEmails);
+    </script>
+
+</body>
+</html>

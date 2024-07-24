@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="photo.css">
+    <title>DreamSnap Studios - Customer Reviews</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book_session.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="reviews.html">Customer Reviews</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section id="customer-reviews" class="customer-reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p><strong>John Doe:</strong> <span class="rating">
+                <br>
+                <br>
+                5 - Excellent</span> 
+                <br>
+                <br>
+                DreamSnap Studios exceeded my expectations. The photos were stunning, and the service was impeccable.</p>
+                <img src="joe.jpg" alt="John Doe Photo" class="customer-photo">
+        </div>
+        <!-- <div class="review">
+            <p><strong>Jane Smith:</strong> <span class="rating">
+                <br>
+                <br>
+                4 - Very Good</span> 
+                <br>
+                <br>
+                I had a great experience with DreamSnap Studios. The photographer was professional and captured beautiful moments.</p>
+                <img src="party.jpg" alt="John Doe Photo" class="customer-photo">
+        </div>
+        <div class="review">
+            <p><strong>Alice Johnson:</strong> <span class="rating">
+                <br>
+                <br>
+                4 - Very Good</span>
+                <br>
+                <br>
+                I enjoyed my photo session with DreamSnap Studios. The team was friendly, and the results were impressive..</p>
+                <img src="workshop.jpg" alt="John Doe Photo" class="customer-photo">
+        </div> -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DreamSnap Studios. All rights reserved.</p>
+    </footer>
+    <script>
+        
+function displayFeedbacks() {
+    var feedbacks = localStorage.getItem('feedbacks');
+    feedbacks = feedbacks ? JSON.parse(feedbacks) : [];
+
+    var reviewsContainer = document.getElementById('customer-reviews');
+    reviewsContainer.innerHTML = '';
+
+    feedbacks.forEach(function (feedback) {
+        var review = document.createElement('div');
+        review.classList.add('review');
+
+        var strong = document.createElement('strong');
+        strong.textContent = feedback.name + ': ';
+
+        var ratingSpan = document.createElement('span');
+        ratingSpan.classList.add('rating');
+        ratingSpan.textContent = feedback.rating;
+
+        var p = document.createElement('p');
+        p.appendChild(strong);
+        p.appendChild(document.createElement('br'));
+        p.appendChild(ratingSpan);
+        p.appendChild(document.createElement('br'));
+        p.appendChild(document.createTextNode(feedback.comments));
+
+        var img = document.createElement('img');
+        img.src = "joe.jpg"; 
+        img.alt = feedback.name + " Photo"; 
+        img.classList.add('customer-photo');
+
+        review.appendChild(p);
+        review.appendChild(img);
+
+        reviewsContainer.appendChild(review);
+    });
+}
+
+        // Call the function to display feedbacks
+        displayFeedbacks();
+    </script>
+</body>
+</html>

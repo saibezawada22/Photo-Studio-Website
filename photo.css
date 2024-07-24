@@ -1,0 +1,331 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('bg.jpg') center/cover no-repeat fixed;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('logo.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: right ;
+    padding: 6em 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    color: black;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Common styling for success messages */
+.success {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.success h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.success p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.success .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e8491d;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.success .btn:hover {
+    background-color: #333;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e8491d;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+/* Additional styling for specific success messages */
+.reservation-success,
+.feedback-success {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.reservation-success h2,
+.feedback-success h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.reservation-success p,
+.feedback-success p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.reservation-success .btn,
+.feedback-success .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e8491d;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.reservation-success .btn:hover,
+.feedback-success .btn:hover {
+    background-color: #333;
+}
+
+.services {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.service-image {
+    max-height: 200px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-details {
+    padding: 15px;
+}
+
+.service-item {
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation {
+    text-align: center;
+    padding: 4em 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label,
+form input,
+form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
+}
+
+form label,
+form input,
+form select,
+form button {
+    margin-bottom: 25px;
+}
+
+form button {
+    display: block;
+    margin: 0 auto;
+}
+
+.contact {
+    text-align: center;
+    padding: 4em 0;
+}
+
+address {
+    font-style: normal;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.feedback {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.feedback h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.feedback p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.feedback form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feedback form select,
+.feedback form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.feedback form button {
+    background-color: #e8491d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.feedback form button:hover {
+    background-color: #333;
+}
+
+/* Rating styles */
+.feedback form label.rating-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.feedback form input[type="radio"] {
+    display: none;
+}
+
+.feedback form label.rating-star {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.feedback form input[type="radio"]:checked + label.rating-star {
+    color: #e8491d;
+}
+
+/* Customer Reviews styles */
+.customer-reviews {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.customer-reviews h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.customer-reviews .review {
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-reviews .review img.review-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.customer-reviews .review p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.customer-reviews .review .rating {
+    color: #e8491d;
+    font-size: 1em;
+}
+
+.feedback input[type="text"],
+.feedback input[type="email"],
+.feedback select,
+.feedback textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
